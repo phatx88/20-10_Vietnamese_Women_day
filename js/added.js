@@ -1,14 +1,15 @@
-window.addEventListener("load", function () {   
-    const loader = document.querySelector(".loader");
-    setInterval(function(){       
-        loader.className += " hidden"; // class "loader hidden"
-    },10000);
+// window.addEventListener("load", function () {   
+//     const loader = document.querySelector(".loader");
+//     setInterval(function(){       
+//         loader.className += " hidden"; // class "loader hidden"
+//     },10000);
     
-});
+// });
 
 const button = document.querySelector("#button");
 const icon = document.querySelector("#button > i");
 const audio = document.querySelector("audio");
+const loader = document.querySelector(".loader");
 
 button.addEventListener("click", () => {
   if (audio.paused) {
@@ -23,5 +24,8 @@ button.addEventListener("click", () => {
     icon.classList.add('fa-volume-up');
   }
   button.classList.add("fade");
+  setInterval(function(){       
+    loader.className += " hidden"; // class "loader hidden"
+},10000);
 });
 
