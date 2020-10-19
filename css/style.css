@@ -8,6 +8,11 @@ body{
     text-transform: uppercase;
 	overflow: hidden;
 }
+
+.text-color {
+    color: rgba(203,96,179,1) !important;
+}
+
 a{
     color: #ddd;
     text-decoration: none;
@@ -324,8 +329,9 @@ a{
 }
 
 .loader__title h1 {
-    font-size: xx-large;
-    font-weight: 900;
+    font-size: 2.3vw;
+    font-weight: 700;
+    color: rgba(203,96,179,1);
 }
 
 .loader__title h1:first-child {
@@ -338,6 +344,13 @@ a{
     animation: moveLeft 7s ease-out;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
 }
+
+@media only screen and (max-width: 768px) {
+    .loader__title h1 {
+        font-size: 24px;
+        font-weight: 900;
+    }
+  }
 
 @keyframes moveLeft {
     0% {
@@ -365,4 +378,43 @@ a{
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+
+button {
+    font-size: 16px;
+    color: #eee;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    padding: 15px;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    background:rgba(203,96,179,1);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    opacity: 0.8;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+}
+
+@media only screen and (max-width: 768px) {
+    button {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+    }
+  }
+
+button.fade:hover {
+    opacity: 0.8;
+}
+
+.fade {
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
 }
